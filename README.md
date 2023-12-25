@@ -1,7 +1,16 @@
 # dotfiles
 
-## tmux
+## Zim
 
-https://github.com/tmux-plugins/tpm
+https://zimfw.sh/#install
 
-Press prefix + I (capital i, as in Install) to fetch the plugin.
+```
+curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
+```
+
+## Tmux
+
+```
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+tmux source ~/.tmux.conf
+```
