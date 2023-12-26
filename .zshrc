@@ -136,8 +136,13 @@ export SAVEHIST=1000000000
 
 setopt noautocd
 
-alias ls='exa --group-directories-first --icons --hyperlink --no-quotes -1'
+# replace ls with exa
+alias ls='exa --group-directories-first --icons --hyperlink --no-quotes'
 
+# reboot to windows
+alias rebootw='systemctl reboot --boot-loader-entry=auto-windows'
+
+# open tmux
 if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
     exec tmux new-session -A -s ${USER} >/dev/null 2>&1
 fi
