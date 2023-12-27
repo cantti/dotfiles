@@ -128,21 +128,29 @@ for key ('j') bindkey -M vicmd ${key} history-substring-search-down
 unset key
 # }}} End configuration added by Zim install
 
-
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+# history settings
 export HISTSIZE=1000000000
 export SAVEHIST=1000000000
 
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# disable auto cd
 setopt noautocd
 
-# replace ls with exa
-alias ls='exa --group-directories-first --icons --hyperlink --no-quotes'
+# eza (new) and exa (old)
+if (( ${+commands[eza]} )); then
+  alias ls='eza --group-directories-first --icons --hyperlink --no-quotes'
+elif (( ${+commands[exa]} )); then
+  alias ls='exa --group-directories-first --icons'
+else
+  return 1
+fi
 
 # reboot to windows
 alias rebootw='systemctl reboot --boot-loader-entry=auto-windows'
 
-# open tmux
+# start tmux
 if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
     exec tmux new-session -A -s ${USER} >/dev/null 2>&1
 fi

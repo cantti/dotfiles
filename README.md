@@ -1,18 +1,32 @@
 # dotfiles
 
-## Zim
+Dotfiles that configures
 
-https://zimfw.sh/#install
+zim
+https://zimfw.sh/
 
-```
-curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
-```
+fzf
+https://github.com/junegunn/fzf
 
-## Tmux
-
+tmux & tmux plugin manager
 https://github.com/tmux-plugins/tpm
 
-```
+``` sh
+# set zsh as default
+chsh -s $(which zsh)
+
+# install zim
+curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
+
+# install fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
+# install tmux
+sudo apt install tmux
+sudo pacman -Syu tmux
+
+#  install tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 tmux source ~/.tmux.conf
 ```
