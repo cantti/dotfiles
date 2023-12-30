@@ -11,6 +11,12 @@ https://github.com/junegunn/fzf
 tmux & tmux plugin manager
 https://github.com/tmux-plugins/tpm
 
+bat
+https://github.com/sharkdp/bat
+
+fd
+https://github.com/sharkdp/fd
+
 ``` sh
 # set zsh as default
 chsh -s $(which zsh)
@@ -29,4 +35,12 @@ sudo pacman -Syu tmux
 #  install tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 tmux source ~/.tmux.conf
+
+# install bat
+# https://github.com/sharkdp/bat
+
+
+# install fd
+# https://github.com/sharkdp/fd
+
 ```
