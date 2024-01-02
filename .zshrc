@@ -132,6 +132,9 @@ unset key
 export HISTSIZE=1000000000
 export SAVEHIST=1000000000
 
+# add ~/.local/bin to PATH
+PATH="$PATH:~/.local/bin"
+
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
