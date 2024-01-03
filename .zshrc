@@ -142,9 +142,9 @@ PATH="$PATH:$HOME/.local/bin"
 setopt noautocd
 
 # eza (new) and exa (old)
-if (( ${+commands[eza]} )); then
+if [[ -x "$(command -v eza)" ]]; then
   alias ls='eza --group-directories-first --icons --hyperlink --no-quotes'
-elif (( ${+commands[exa]} )); then
+elif [[ -x "$(command -v exa)" ]]; then
   alias ls='exa --group-directories-first --icons'
 else
   return 1
@@ -167,24 +167,28 @@ function isWinDir {
 
 # use windows git when use WSl in windows directory
 # https://github.com/microsoft/WSL/issues/4401#issuecomment-670080585
-function git {
-  if isWinDir
-  then
-    git.exe "$@"
-  else
-    /usr/bin/git "$@"
-  fi
-}
+if [[ -x "$(command -v git.exe)" ]]; then
+  function git {
+    if isWinDir
+    then
+      git.exe "$@"
+    else
+      /usr/bin/git "$@"
+    fi
+  }
+fi
 
 # use windows dotnet when use WSl in windows directory
-function dotnet {
-  if isWinDir
-  then
-    dotnet.exe "$@"
-  else
-    /usr/bin/dotnet "$@"
-  fi
-}
+if [[ -x "$(command -v dotnet.exe)" ]]; then
+  function dotnet {
+    if isWinDir
+    then
+      dotnet.exe "$@"
+    else
+      /usr/bin/dotnet "$@"
+    fi
+  }
+fi
 
 # fzf
 export FZF_DEFAULT_OPTS="--exact"
