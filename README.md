@@ -44,3 +44,7 @@ tmux source ~/.tmux.conf
 # https://github.com/sharkdp/fd
 
 ```
+
+## extra
+
+https://github.com/nordtheme/konsole
