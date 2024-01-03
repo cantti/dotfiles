@@ -157,6 +157,25 @@ alias rebootw='systemctl reboot --boot-loader-entry=auto-windows'
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
 
+# use windows git when use WSl in windows directory
+function isWinDir {
+  case $PWD/ in
+    /mnt/*) return $(true);;
+    *) return $(false);;
+  esac
+}
+
+# wrap the git command to either run windows git or linux
+# https://github.com/microsoft/WSL/issues/4401#issuecomment-670080585
+function git {
+  if isWinDir
+  then
+    git.exe "$@"
+  else
+    /usr/bin/git "$@"
+  fi
+}
+
 # fzf
 export FZF_DEFAULT_OPTS="--exact"
 export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always {}' --bind 'ctrl-/:change-preview-window(right|down|hidden)' --preview-window hidden --preview-window noborder --no-separator"
