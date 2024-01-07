@@ -206,6 +206,10 @@ else
   export TMUX_CLIPBOARD="wl-copy"  
 fi
 
+# vim
+alias vi='nvim'
+alias vim='nvim'
+export EDITOR='nvim'
 
 # start tmux
 if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
