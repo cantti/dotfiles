@@ -6,9 +6,9 @@ Plug 'nvim-tree/nvim-tree.lua'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'akinsho/bufferline.nvim'
 Plug 'nordtheme/vim'
--- Plug 'vim-airline/vim-airline'
--- Plug 'itchyny/lightline.vim'
 Plug 'nvim-lualine/lualine.nvim'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 vim.call('plug#end')
 
 require("nvim-tree").setup({
@@ -18,7 +18,7 @@ require("nvim-tree").setup({
         },
     },
     filters = {
-      dotfiles = true,
+     --  dotfiles = true,
       custom = { '^.git$' }
     },
 })
@@ -47,7 +47,7 @@ vim.g.NERDTreeIgnore = { '.git$' }
 vim.g.NERDTreeQuitOnOpen = 1
 
 vim.opt.number = true
-vim.opt.clipboard = unnamedplus
+vim.opt.clipboard = 'unnamedplus'
 vim.g.airline_powerline_fonts = 1
 
 -- Neovim Cursor change after exiting Neovim bug fix
@@ -60,5 +60,12 @@ vim.opt.showtabline = 2
 vim.keymap.set('n', '<CR>', ':noh<CR><CR>')
 
 vim.keymap.set('n', '<F1>', ':NvimTreeToggle<CR>')
+vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>')
 vim.keymap.set('n', '<C-j>', ':bprev<CR>')
 vim.keymap.set('n', '<C-k>', ':bnext<CR>')
+
+-- fzf
+vim.keymap.set('n', '<leader>ff', ':Files<CR>')
+vim.keymap.set('n', '<leader>fb', ':Buffers<CR>')
+vim.keymap.set('n', '<leader>fh', ':History<CR>')
+vim.keymap.set('n', '<leader>fr', ':History:<CR>')
