@@ -1,27 +1,14 @@
 local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
-Plug 'tpope/vim-sleuth'
-Plug 'nvim-tree/nvim-tree.lua'
-Plug 'nvim-tree/nvim-web-devicons'
-Plug 'akinsho/bufferline.nvim'
+-- Plug 'tpope/vim-sleuth'
+-- Plug 'akinsho/bufferline.nvim'
 Plug 'nordtheme/vim'
-Plug 'nvim-lualine/lualine.nvim'
+-- Plug 'nvim-lualine/lualine.nvim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdcommenter'
 vim.call('plug#end')
-
-require("nvim-tree").setup({
-    actions = {
-        open_file = {
-          quit_on_open = true,
-        },
-    },
-    filters = {
-      custom = { '^.git$' }
-    },
-})
 
 -- enable true color 
 vim.opt.termguicolors = true
@@ -30,31 +17,25 @@ vim.opt.termguicolors = true
 vim.cmd 'colorscheme nord'
 
 -- bufferline
-require("bufferline").setup{}
+-- require("bufferline").setup{}
 
 -- status line
-require('lualine').setup{
-    options = {
-      disabled_filetypes = { 'NvimTree' },
-    }   
-}
+-- require('lualine').setup{
+--     options = {
+--       disabled_filetypes = { 'NvimTree' },
+--       icons_enabled = true,
+--       section_separators = '', 
+--       component_separators = ''
+--     },
+--     extensions = { 'fzf' }
+-- }
 
--- nerd tree show hidden files 
-vim.g.NERDTreeShowHidden = 1
-vim.g.NERDTreeIgnore = { '.git$' }
-
--- nerd tree quit on open
-vim.g.NERDTreeQuitOnOpen = 1
 
 vim.opt.number = true
 vim.opt.clipboard = 'unnamedplus'
-vim.g.airline_powerline_fonts = 1
 
 -- Neovim Cursor change after exiting Neovim bug fix
 vim.opt.guicursor = disable
-
--- always show tab line
-vim.opt.showtabline = 2
 
 -- This unsets the "last search pattern" register by hitting return
 vim.keymap.set('n', '<CR>', ':noh<CR><CR>')
@@ -78,3 +59,15 @@ vim.keymap.set({'n', 'v'}, '<C-_>', '<Plug>NERDCommenterToggle<CR>')
 
 -- Ctrl + A to select all
 vim.keymap.set('n', '<C-a>', 'ggVG') 
+
+-- display hidden characters
+vim.opt.list = true
+vim.opt.listchars = { tab = ">·", trail = "·", precedes = "←", extends = "→", eol = "↲", nbsp = "␣" }
+
+-- indentation settings
+vim.opt.expandtab = true
+vim.opt.autoindent = true
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.keymap.set('n', '<leader>t4', ':set shiftwidth=4 tabstop=4<CR>')
+vim.keymap.set('n', '<leader>t2', ':set shiftwidth=2 tabstop=2<CR>')
