@@ -9,6 +9,7 @@ Plug 'nordtheme/vim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'preservim/nerdcommenter'
 vim.call('plug#end')
 
 require("nvim-tree").setup({
@@ -69,3 +70,12 @@ vim.keymap.set('n', '<leader>ff', ':Files<CR>')
 vim.keymap.set('n', '<leader>fb', ':Buffers<CR>')
 vim.keymap.set('n', '<leader>fh', ':History<CR>')
 vim.keymap.set('n', '<leader>fr', ':History:<CR>')
+
+-- Comment
+-- Ctrl+/ to comment
+vim.g.NERDCreateDefaultMappings = 1
+vim.g.NERDSpaceDelims = 1
+vim.keymap.set({'n', 'v'}, '<C-_>', '<Plug>NERDCommenterToggle<CR>')
+
+-- Ctrl + A to select all
+vim.keymap.set('n', '<C-a>', 'ggVG') 
