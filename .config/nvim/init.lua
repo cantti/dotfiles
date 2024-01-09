@@ -71,3 +71,6 @@ vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.keymap.set('n', '<leader>t4', ':set shiftwidth=4 tabstop=4<CR>')
 vim.keymap.set('n', '<leader>t2', ':set shiftwidth=2 tabstop=2<CR>')
+
+-- shift tab to de-indent
+vim.keymap.set('i', '<S-Tab>', '<C-d>')
