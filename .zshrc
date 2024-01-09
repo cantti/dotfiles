@@ -209,6 +209,9 @@ fi
 # vim
 alias vi='nvim'
 alias vim='nvim'
+alias sudovi='sudo -E nvim'
+alias sudovim='sudo -E nvim'
+alias sudonvim='sudo -E nvim'
 export EDITOR='nvim'
 
 # start tmux
