@@ -57,7 +57,8 @@ vim.keymap.set({'n', 'v'}, '<C-_>', '<Plug>NERDCommenterToggle<CR>')
 vim.keymap.set('n', '<C-a>', 'ggVG') 
 
 -- display hidden characters
-vim.opt.list = true
+-- vim.opt.list = true
+-- use :set list or :set nolist
 vim.opt.listchars = { tab = ">·", trail = "·", precedes = "←", extends = "→", eol = "↲", nbsp = "␣" }
 
 -- indentation settings
