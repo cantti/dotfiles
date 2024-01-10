@@ -1,10 +1,6 @@
 local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
--- Plug 'tpope/vim-sleuth'
--- Plug 'akinsho/bufferline.nvim'
-Plug 'nordtheme/vim'
--- Plug 'nvim-lualine/lualine.nvim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdcommenter'
