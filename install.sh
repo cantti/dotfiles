@@ -7,7 +7,17 @@ dotfilesdir=$HOME/dotfiles
 olddotfilesdir=$HOME/dotfiles_old
 
 # list of files/folders to symlink in homedir
-files=(".tmux.conf" ".zimrc" ".zshrc" ".config/nvim/init.lua")
+files=(
+    ".tmux.conf" 
+    ".zimrc" 
+    ".zshrc" 
+    ".config/nvim/init.lua"
+    ".zsh/completion.zsh"
+    ".zsh/input.zsh"
+    ".zsh/environment.zsh"
+    ".zsh/pure/async"
+    ".zsh/pure/prompt_pure_setup"
+)
 
 # create dotfiles_old in homedir
 mkdir -p $olddotfilesdir
