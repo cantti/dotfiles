@@ -42,10 +42,10 @@ vim.keymap.set('n', '<C-j>', ':bprev<CR>')
 vim.keymap.set('n', '<C-k>', ':bnext<CR>')
 
 -- fzf
-vim.keymap.set('n', '<leader>ff', ':Files<CR>')
-vim.keymap.set('n', '<leader>fb', ':Buffers<CR>')
-vim.keymap.set('n', '<leader>fh', ':History<CR>')
-vim.keymap.set('n', '<leader>fr', ':History:<CR>')
+vim.keymap.set('n', '<leader>f', ':Files<CR>')
+vim.keymap.set('n', '<leader>b', ':Buffers<CR>')
+vim.keymap.set('n', '<leader>h', ':History<CR>')
+vim.keymap.set('n', '<leader>r', ':History:<CR>')
 
 -- Comment
 -- Ctrl+/ to comment
