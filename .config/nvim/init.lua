@@ -14,7 +14,7 @@ vim.call('plug#end')
 vim.opt.termguicolors = true
 
 -- set nord colorscheme
-vim.cmd 'colorscheme nord'
+vim.cmd 'colorscheme slate'
 
 -- bufferline
 -- require("bufferline").setup{}
