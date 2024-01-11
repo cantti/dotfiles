@@ -51,7 +51,7 @@ vim.keymap.set('n', '<leader>r', ':History:<CR>')
 -- Ctrl+/ to comment
 vim.g.NERDCreateDefaultMappings = 1
 vim.g.NERDSpaceDelims = 1
-let g:NERDDefaultAlign = 'left'
+vim.g.NERDDefaultAlign = 'left'
 vim.keymap.set({'n', 'v'}, '<C-_>', '<Plug>NERDCommenterToggle<CR>')
 
 -- Ctrl + A to select all
