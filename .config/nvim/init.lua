@@ -50,11 +50,13 @@ vim.keymap.set('n', '<leader>b', ':Buffers<CR>')
 vim.keymap.set('n', '<leader>h', ':History<CR>')
 vim.keymap.set('n', '<leader>r', ':History:<CR>')
 
--- Comment
--- Ctrl+/ to comment
+-- Nerdcommenter settings
 vim.g.NERDCreateDefaultMappings = 1
 vim.g.NERDSpaceDelims = 1
 vim.g.NERDDefaultAlign = 'left'
+let g:NERDToggleCheckAllLines = 1
+
+-- Ctrl+/ to comment
 vim.keymap.set({'n', 'v'}, '<C-_>', '<Plug>NERDCommenterToggle<CR>')
 
 -- Ctrl + A to select all
