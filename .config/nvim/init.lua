@@ -12,6 +12,9 @@ vim.opt.termguicolors = true
 -- set nord colorscheme
 vim.cmd 'colorscheme slate'
 
+-- leader space
+vim.g.mapleader = " "
+
 -- bufferline
 -- require("bufferline").setup{}
 
