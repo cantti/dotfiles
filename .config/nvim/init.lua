@@ -15,7 +15,7 @@ vim.opt.termguicolors = true
 vim.cmd 'colorscheme onedark'
 
 -- reduce update time for immediate git status (airblade/vim-gitgutter)
-vim.g.updatetime=100
+vim.opt.updatetime = 100
 
 -- leader space
 vim.g.mapleader = " "
