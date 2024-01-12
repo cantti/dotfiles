@@ -4,7 +4,7 @@ vim.call('plug#begin')
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdcommenter'
-Plug 'joshdick/onedark.vim'
+Plug 'navarasu/onedark.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
 vim.call('plug#end')
 
@@ -12,7 +12,8 @@ vim.call('plug#end')
 vim.opt.termguicolors = true
 
 -- set colorscheme
-vim.cmd 'colorscheme onedark'
+-- vim.cmd 'colorscheme onedark'
+require('onedark').load()
 
 -- leader space
 vim.g.mapleader = " "
