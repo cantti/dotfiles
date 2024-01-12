@@ -10,7 +10,7 @@ vim.call('plug#end')
 vim.opt.termguicolors = true
 
 -- set nord colorscheme
-vim.cmd 'colorscheme slate'
+vim.cmd 'colorscheme habamax'
 
 -- leader space
 vim.g.mapleader = " "
