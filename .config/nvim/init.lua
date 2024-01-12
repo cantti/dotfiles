@@ -4,13 +4,14 @@ vim.call('plug#begin')
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdcommenter'
+Plug 'tomasiser/vim-code-dark'
 vim.call('plug#end')
 
 -- enable true color 
 vim.opt.termguicolors = true
 
 -- set nord colorscheme
-vim.cmd 'colorscheme habamax'
+vim.cmd 'colorscheme codedark'
 
 -- leader space
 vim.g.mapleader = " "
