@@ -17,6 +17,7 @@ files=(
     ".zsh/environment.zsh"
     ".zsh/pure/async"
     ".zsh/pure/prompt_pure_setup"
+    ".config/bat/config"
 )
 
 # create dotfiles_old in homedir
