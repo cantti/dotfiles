@@ -5,6 +5,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'joshdick/onedark.vim'
+Plug 'nvim-treesitter/nvim-treesitter'
 vim.call('plug#end')
 
 -- enable true color 
