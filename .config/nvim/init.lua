@@ -16,22 +16,8 @@ vim.cmd 'colorscheme onedark'
 -- leader space
 vim.g.mapleader = " "
 
--- bufferline
--- require("bufferline").setup{}
-
--- status line
--- require('lualine').setup{
---     options = {
---       disabled_filetypes = { 'NvimTree' },
---       icons_enabled = true,
---       section_separators = '', 
---       component_separators = ''
---     },
---     extensions = { 'fzf' }
--- }
-
-
 vim.opt.number = true
+
 vim.opt.clipboard = 'unnamedplus'
 
 -- Neovim Cursor change after exiting Neovim bug fix
@@ -40,8 +26,11 @@ vim.opt.guicursor = disable
 -- This unsets the "last search pattern" register by hitting return
 vim.keymap.set('n', '<CR>', ':noh<CR><CR>')
 
-vim.keymap.set('n', '<F1>', ':NvimTreeToggle<CR>')
-vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>')
+-- delete instead of cut (use x for cut)
+vim.keymap.set('n', 'd', '"_d')
+vim.keymap.set('n', 'D', '"_D')
+
+-- nav between buffers
 vim.keymap.set('n', '<C-j>', ':bprev<CR>')
 vim.keymap.set('n', '<C-k>', ':bnext<CR>')
 
