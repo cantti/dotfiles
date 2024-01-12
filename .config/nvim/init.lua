@@ -5,6 +5,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'joshdick/onedark.vim'
+Plug 'airblade/vim-gitgutter'
 vim.call('plug#end')
 
 -- enable true color 
@@ -12,6 +13,9 @@ vim.opt.termguicolors = true
 
 -- set colorscheme
 vim.cmd 'colorscheme onedark'
+
+-- reduce update time for immediate git status (airblade/vim-gitgutter)
+vim.g.updatetime=100
 
 -- leader space
 vim.g.mapleader = " "
@@ -47,7 +51,8 @@ vim.g.NERDDefaultAlign = 'left'
 vim.g.NERDToggleCheckAllLines = 1
 
 -- Ctrl+/ to comment
-vim.keymap.set({'n', 'v'}, '<C-_>', '<Plug>NERDCommenterToggle<CR>')
+vim.keymap.set({'n', 'v'}, '<C-_>', '<Plug>NERDCommenterToggle')
+vim.keymap.set('i', '<C-_>', '<Esc><Plug>NERDCommenterTogglei')
 
 -- Ctrl + A to select all
 vim.keymap.set('n', '<C-a>', 'ggVG') 
