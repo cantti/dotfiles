@@ -77,9 +77,9 @@ export FZF_CTRL_T_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --ex
 export FZF_ALT_C_COMMAND='fd --type d --strip-cwd-prefix --hidden --follow --exclude .git'
 
 # tmux copy tool
-if [[ -x '$(command -v clip.exe)' ]]; then
+if [[ -x "$(command -v clip.exe)" ]]; then
   export TMUX_CLIPBOARD="clip.exe"
-elif [[ $XDG_SESSION_TYPE == 'x11' ]]; then
+elif [[ $XDG_SESSION_TYPE == "x11" ]]; then
   export TMUX_CLIPBOARD="xsel -ib"
 else
   export TMUX_CLIPBOARD="wl-copy"  
