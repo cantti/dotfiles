@@ -10,7 +10,7 @@ vim.call('plug#end')
 -- enable true color 
 vim.opt.termguicolors = true
 
--- set nord colorscheme
+-- set colorscheme
 vim.cmd 'colorscheme codedark'
 
 -- leader space
