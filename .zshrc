@@ -29,6 +29,8 @@ else
   return 1
 fi
 
+alias m='mc'
+
 # reboot to windows
 alias rebootw='systemctl reboot --boot-loader-entry=auto-windows'
 
@@ -86,12 +88,26 @@ else
 fi
 
 # vim
+alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
 alias sudovi='sudo -E nvim'
 alias sudovim='sudo -E nvim'
 alias sudonvim='sudo -E nvim'
+alias sudov='sudo -E nvim'
+
+# default editor
 export EDITOR='nvim'
+
+# default viewer
+export VIEWER='bat'
+
+# make Midnight Commander exit to its current directory
+alias mc='source /usr/lib/mc/mc-wrapper.sh'
+
+# git aliases
+alias g='git'
+alias lg='lazygit'
 
 # start tmux
 if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then

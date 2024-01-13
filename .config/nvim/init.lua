@@ -36,10 +36,10 @@ vim.opt.guicursor = disable
 vim.keymap.set('n', '<CR>', ':noh<CR><CR>')
 
 -- delete instead of cut (use x for cut)
-vim.keymap.set({'n', 'i'}, 'd', '"_d')
-vim.keymap.set({'n', 'i'}, 'D', '"_D')
-vim.keymap.set({'n', 'i'}, 'c', '"_c')
-vim.keymap.set({'n', 'i'}, 'C', '"_C')
+vim.keymap.set({'n', 'v'}, 'd', '"_d')
+vim.keymap.set({'n', 'v'}, 'D', '"_D')
+vim.keymap.set({'n', 'v'}, 'c', '"_c')
+vim.keymap.set({'n', 'v'}, 'C', '"_C')
 
 -- nav between buffers
 vim.keymap.set('n', '<C-j>', ':bprev<CR>')
