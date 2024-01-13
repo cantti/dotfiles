@@ -2,11 +2,6 @@ source "$HOME/.zsh/environment.zsh"
 source "$HOME/.zsh/completion.zsh"
 source "$HOME/.zsh/input.zsh"
 
-# pure
-fpath+=($HOME/.zsh/pure)
-autoload -U promptinit; promptinit
-prompt pure
-
 # history settings
 export HISTSIZE=1000000000
 export SAVEHIST=1000000000
@@ -108,6 +103,19 @@ export VIEWER='bat'
 # git aliases
 alias g='git'
 alias lg='lazygit'
+
+# zsh-syntax-highlighting
+if [[ -f "$HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]; then
+  source "$HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+fi
+
+# pure
+if [[ -d "$HOME/.zsh/plugins/pure" ]]; then
+  fpath+=($HOME/.zsh/plugins/pure)
+  autoload -U promptinit; promptinit
+  prompt pure
+fi
+
 
 # start tmux
 if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
