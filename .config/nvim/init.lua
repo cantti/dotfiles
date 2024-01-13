@@ -26,9 +26,6 @@ vim.opt.number = true
 -- clipboard config
 vim.opt.clipboard = 'unnamedplus'
 
--- case insensitive search by default (\c to override)
-vim.opt.ignorecase = true
-
 -- Neovim Cursor change after exiting Neovim bug fix
 vim.opt.guicursor = disable
 
