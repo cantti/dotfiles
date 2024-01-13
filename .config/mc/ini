@@ -101,8 +101,8 @@ vertical_equal=true
 horizontal_equal=true
 
 [Misc]
-timeformat_recent=%b %e %H:%M
-timeformat_old=%b %e  %Y
+timeformat_recent=%F %T
+timeformat_old=%F %T
 ftp_proxy_host=gate
 ftpfs_password=anonymous@
 display_codepage=UTF-8
@@ -135,7 +135,7 @@ mouse_move_pages=true
 filetype_mode=true
 permission_mode=false
 torben_fj_mode=false
-quick_search_mode=2
+quick_search_mode=0
 select_flags=7
 simple_swap=false
 

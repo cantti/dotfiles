@@ -20,6 +20,7 @@ files=(
     ".config/bat/config"
     ".local/share/mc/skins/onedark16M.ini"
     ".config/mc/ini"
+    ".config/mc/panels"
 )
 
 # create dotfiles_old in homedir
