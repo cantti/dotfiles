@@ -18,6 +18,8 @@ files=(
     ".zsh/pure/async"
     ".zsh/pure/prompt_pure_setup"
     ".config/bat/config"
+    ".local/share/mc/skins/onedark16M.ini"
+    ".config/mc/ini"
 )
 
 # create dotfiles_old in homedir

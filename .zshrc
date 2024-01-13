@@ -29,6 +29,9 @@ else
   return 1
 fi
 
+# mc
+# make Midnight Commander exit to its current directory
+alias mc='source /usr/lib/mc/mc-wrapper.sh'
 alias m='mc'
 
 # reboot to windows
@@ -101,9 +104,6 @@ export EDITOR='nvim'
 
 # default viewer
 export VIEWER='bat'
-
-# make Midnight Commander exit to its current directory
-alias mc='source /usr/lib/mc/mc-wrapper.sh'
 
 # git aliases
 alias g='git'
