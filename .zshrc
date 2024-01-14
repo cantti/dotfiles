@@ -20,7 +20,7 @@ export VIEWER="bat"
 alias grep="grep --color=auto"
 
 # ls
-alias ls="ls --group-directories-first --color=always"
+alias ls="ls --group-directories-first --color=always --literal"
 alias ll="ls -lh"         # long format and human-readable sizes
 alias l="ll -A"           # long format, all files
 alias lm="l | less"    # long format, all files, use pager
