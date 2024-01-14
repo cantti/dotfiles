@@ -29,6 +29,13 @@ fi
 alias mc='source /usr/lib/mc/mc-wrapper.sh'
 alias m='mc'
 
+# open in file explorer
+if [[ -x "$(command -v explorer.exe)" ]]; then
+  alias e="explorer.exe ."
+else
+  alias e="dolphin . >/dev/null 2>&1 & disown"
+fi
+
 # reboot to windows
 alias rebootw='systemctl reboot --boot-loader-entry=auto-windows'
 
@@ -115,7 +122,6 @@ if [[ -d "$HOME/.zsh/plugins/pure" ]]; then
   autoload -U promptinit; promptinit
   prompt pure
 fi
-
 
 # start tmux
 if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
