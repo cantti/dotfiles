@@ -19,6 +19,7 @@ export VIEWER="bat"
 # colors
 if [[ -x "$(command -v dircolors)" ]]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    LS_COLORS+=':ow=01;34'
 fi
 
 # grep
