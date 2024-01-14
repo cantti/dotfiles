@@ -6,23 +6,58 @@ source "$HOME/.zsh/input.zsh"
 export HISTSIZE=1000000000
 export SAVEHIST=1000000000
 
+# pager
+export PAGER="less"
+export LESS="--RAW-CONTROL-CHARS -i"
+
+# default editor
+export EDITOR="nvim"
+
+# default viewer
+export VIEWER="bat"
+
+# grep
+alias grep="grep --color=auto"
+
+# ls
+alias ls="ls --group-directories-first --color=always"
+alias ll="ls -lh"         # long format and human-readable sizes
+alias l="ll -A"           # long format, all files
+alias lm="l | less"    # long format, all files, use pager
+alias lk="ll -Sr"         # long format, largest file size last
+alias lt="ll -tr"         # long format, newest modification time last
+
+# bat
+export BAT_THEME="OneHalfDark"
+export BAT_PAGING='always'
+
+# bat for man
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANROFFOPT="-c"
+
+# disable auto cd
+setopt noautocd
+
 # add ~/.local/bin to PATH
 PATH="$PATH:$HOME/.local/bin"
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPTS="--exact"
+export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always {}' --bind 'ctrl-/:change-preview-window(right|down|hidden)' --preview-window hidden --preview-window noborder --no-separator"
+export FZF_DEFAULT_COMMAND="fd --type f --strip-cwd-prefix --hidden --follow --exclude .git --exclude node_modules"
+export FZF_CTRL_T_COMMAND="fd --type f --strip-cwd-prefix --hidden --follow --exclude .git"
+export FZF_ALT_C_COMMAND="fd --type d --strip-cwd-prefix --hidden --follow --exclude .git"
 
-# disable auto cd
-setopt noautocd
 
-# eza (new) and exa (old)
-if [[ -x "$(command -v eza)" ]]; then
-  alias ls='eza --group-directories-first --icons --hyperlink --no-quotes'
-elif [[ -x "$(command -v exa)" ]]; then
-  alias ls='exa --group-directories-first --icons'
-else
-  return 1
-fi
+# vim
+alias v="nvim"
+alias vi="nvim"
+alias vim="nvim"
+alias sudovi="sudo -E nvim"
+alias sudovim="sudo -E nvim"
+alias sudonvim="sudo -E nvim"
+alias sudov="sudo -E nvim"
 
 # mc
 # make Midnight Commander exit to its current directory
@@ -37,11 +72,7 @@ else
 fi
 
 # reboot to windows
-alias rebootw='systemctl reboot --boot-loader-entry=auto-windows'
-
-# bat for man
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-export MANROFFOPT="-c"
+alias rebootw="systemctl reboot --boot-loader-entry=auto-windows"
 
 # checks to see if we are in a windows or linux dir
 function isWinDir {
@@ -76,13 +107,6 @@ if [[ -x "$(command -v dotnet.exe)" ]]; then
   }
 fi
 
-# fzf
-export FZF_DEFAULT_OPTS="--exact"
-export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always {}' --bind 'ctrl-/:change-preview-window(right|down|hidden)' --preview-window hidden --preview-window noborder --no-separator"
-export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git --exclude node_modules'
-export FZF_CTRL_T_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
-export FZF_ALT_C_COMMAND='fd --type d --strip-cwd-prefix --hidden --follow --exclude .git'
-
 # tmux copy tool
 if [[ -x "$(command -v clip.exe)" ]]; then
   export TMUX_CLIPBOARD="clip.exe"
@@ -92,24 +116,9 @@ else
   export TMUX_CLIPBOARD="wl-copy"  
 fi
 
-# vim
-alias v='nvim'
-alias vi='nvim'
-alias vim='nvim'
-alias sudovi='sudo -E nvim'
-alias sudovim='sudo -E nvim'
-alias sudonvim='sudo -E nvim'
-alias sudov='sudo -E nvim'
-
-# default editor
-export EDITOR='nvim'
-
-# default viewer
-export VIEWER='bat'
-
 # git aliases
-alias g='git'
-alias lg='lazygit'
+alias g="git"
+alias lg="lazygit"
 
 # zsh-syntax-highlighting
 if [[ -f "$HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]; then
