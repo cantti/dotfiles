@@ -123,16 +123,16 @@ fi
 alias g="git"
 alias lg="lazygit"
 
-# zsh-syntax-highlighting
-if [[ -f "$HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]; then
-  source "$HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-fi
-
 # pure
 if [[ -d "$HOME/.zsh/plugins/pure" ]]; then
   fpath+=($HOME/.zsh/plugins/pure)
   autoload -U promptinit; promptinit
   prompt pure
+fi
+
+# zsh-syntax-highlighting (must be at the end)
+if [[ -f "$HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]; then
+  source "$HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 fi
 
 # start tmux
