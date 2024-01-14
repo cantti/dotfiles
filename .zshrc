@@ -74,7 +74,7 @@ alias mc='source /usr/lib/mc/mc-wrapper.sh'
 alias m='mc'
 
 # archiving and compression
-alias atool="atool -xq"
+alias atool="atool -q"
 
 # open in file explorer
 if [[ -x "$(command -v explorer.exe)" ]]; then
