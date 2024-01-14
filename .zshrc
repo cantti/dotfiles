@@ -64,6 +64,9 @@ alias sudov="sudo -E nvim"
 alias mc='source /usr/lib/mc/mc-wrapper.sh'
 alias m='mc'
 
+# archiving and compression
+alias atool="atool -xq"
+
 # open in file explorer
 if [[ -x "$(command -v explorer.exe)" ]]; then
   alias e="explorer.exe ."
