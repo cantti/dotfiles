@@ -60,9 +60,6 @@ export LESS="--RAW-CONTROL-CHARS -i"
 # default editor
 export EDITOR="nvim"
 
-# default viewer
-export VIEWER="bat"
-
 # colors
 if [[ -x "$(command -v dircolors)" ]]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -83,14 +80,6 @@ alias lm="l | less"    # long format, all files, use pager
 alias lk="ll -Sr"         # long format, largest file size last
 alias lt="ll -tr"         # long format, newest modification time last
 
-# bat
-export BAT_THEME="OneHalfDark"
-export BAT_PAGING='always'
-
-# bat for man
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-export MANROFFOPT="-c"
-
 # disable auto cd
 setopt noautocd
 
@@ -100,7 +89,6 @@ PATH="$PATH:$HOME/.local/bin"
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS="--exact"
-export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always {}' --bind 'ctrl-/:change-preview-window(right|down|hidden)' --preview-window hidden --preview-window noborder --no-separator"
 export FZF_DEFAULT_COMMAND="fd --type f --strip-cwd-prefix --hidden --follow --exclude .git --exclude node_modules"
 export FZF_CTRL_T_COMMAND="fd --type f --strip-cwd-prefix --hidden --follow --exclude .git"
 export FZF_ALT_C_COMMAND="fd --type d --strip-cwd-prefix --hidden --follow --exclude .git"
