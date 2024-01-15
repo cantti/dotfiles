@@ -28,9 +28,6 @@ vim.opt.clipboard = 'unnamedplus'
 -- Neovim Cursor change after exiting Neovim bug fix
 vim.opt.guicursor = disable
 
--- This unsets the "last search pattern" register by hitting return
-vim.keymap.set('n', '<CR>', ':noh<CR><CR>')
-
 -- delete instead of cut (use x for cut)
 -- vim.keymap.set({'n', 'v'}, 'd', '"_d')
 -- vim.keymap.set({'n', 'v'}, 'D', '"_D')
