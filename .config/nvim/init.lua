@@ -42,7 +42,9 @@ vim.keymap.set('n', '<C-h>', ':bprev<CR>')
 vim.keymap.set('n', '<C-l>', ':bnext<CR>')
 
 -- fzf
+vim.keymap.set('n', '<C-p>', ':Files<CR>')
 vim.keymap.set('n', '<leader>f', ':Files<CR>')
+vim.keymap.set('n', '<C-b>', ':Buffers<CR>')
 vim.keymap.set('n', '<leader>b', ':Buffers<CR>')
 vim.keymap.set('n', '<leader>h', ':History<CR>')
 vim.keymap.set('n', '<leader>r', ':History:<CR>')
