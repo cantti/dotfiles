@@ -4,7 +4,6 @@ vim.call('plug#begin')
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdcommenter'
-Plug 'joshdick/onedark.vim'
 Plug 'airblade/vim-gitgutter'
 vim.call('plug#end')
 
@@ -12,7 +11,7 @@ vim.call('plug#end')
 vim.opt.termguicolors = true
 
 -- set colorscheme
-vim.cmd 'colorscheme onedark'
+vim.cmd 'colorscheme habamax'
 
 -- reduce update time for immediate git status (airblade/vim-gitgutter)
 vim.opt.updatetime = 100
