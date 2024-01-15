@@ -17,7 +17,7 @@ vim.cmd 'colorscheme slate'
 vim.opt.updatetime = 100
 
 -- leader space
-vim.g.mapleader = " "
+-- vim.g.mapleader = " "
 
 -- line number
 vim.opt.number = true
@@ -32,14 +32,14 @@ vim.opt.guicursor = disable
 vim.keymap.set('n', '<CR>', ':noh<CR><CR>')
 
 -- delete instead of cut (use x for cut)
-vim.keymap.set({'n', 'v'}, 'd', '"_d')
-vim.keymap.set({'n', 'v'}, 'D', '"_D')
-vim.keymap.set({'n', 'v'}, 'c', '"_c')
-vim.keymap.set({'n', 'v'}, 'C', '"_C')
+-- vim.keymap.set({'n', 'v'}, 'd', '"_d')
+-- vim.keymap.set({'n', 'v'}, 'D', '"_D')
+-- vim.keymap.set({'n', 'v'}, 'c', '"_c')
+-- vim.keymap.set({'n', 'v'}, 'C', '"_C')
 
 -- nav between buffers
-vim.keymap.set('n', '<C-j>', ':bprev<CR>')
-vim.keymap.set('n', '<C-k>', ':bnext<CR>')
+vim.keymap.set('n', '<C-h>', ':bprev<CR>')
+vim.keymap.set('n', '<C-l>', ':bnext<CR>')
 
 -- fzf
 vim.keymap.set('n', '<leader>f', ':Files<CR>')
