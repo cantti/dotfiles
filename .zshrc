@@ -1,3 +1,50 @@
+#
+# WSL fixes
+#
+
+# Windows terminal does not set COLORTERM
+# https://github.com/microsoft/terminal/issues/11057
+if [[ -n "$WT_SESSION" ]]; then
+    export COLORTERM="truecolor"
+fi 
+
+# checks to see if we are in a windows or linux dir
+function isWinDir {
+  case $PWD/ in
+    /mnt/*) return $(true);;
+    *) return $(false);;
+  esac
+}
+
+# use windows git when use WSl in windows directory
+# https://github.com/microsoft/WSL/issues/4401#issuecomment-670080585
+if [[ -x "$(command -v git.exe)" ]]; then
+  function git {
+    if isWinDir
+    then
+      git.exe "$@"
+    else
+      /usr/bin/git "$@"
+    fi
+  }
+fi
+
+# use windows dotnet when use WSl in windows directory
+if [[ -x "$(command -v dotnet.exe)" ]]; then
+  function dotnet {
+    if isWinDir
+    then
+      dotnet.exe "$@"
+    else
+      /usr/bin/dotnet "$@"
+    fi
+  }
+fi
+
+#
+# end WSL fixes
+#
+
 source "$HOME/.zsh/environment.zsh"
 source "$HOME/.zsh/completion.zsh"
 source "$HOME/.zsh/input.zsh"
@@ -85,39 +132,6 @@ fi
 
 # reboot to windows
 alias rebootw="systemctl reboot --boot-loader-entry=auto-windows"
-
-# checks to see if we are in a windows or linux dir
-function isWinDir {
-  case $PWD/ in
-    /mnt/*) return $(true);;
-    *) return $(false);;
-  esac
-}
-
-# use windows git when use WSl in windows directory
-# https://github.com/microsoft/WSL/issues/4401#issuecomment-670080585
-if [[ -x "$(command -v git.exe)" ]]; then
-  function git {
-    if isWinDir
-    then
-      git.exe "$@"
-    else
-      /usr/bin/git "$@"
-    fi
-  }
-fi
-
-# use windows dotnet when use WSl in windows directory
-if [[ -x "$(command -v dotnet.exe)" ]]; then
-  function dotnet {
-    if isWinDir
-    then
-      dotnet.exe "$@"
-    else
-      /usr/bin/dotnet "$@"
-    fi
-  }
-fi
 
 # tmux copy tool
 if [[ -x "$(command -v clip.exe)" ]]; then
