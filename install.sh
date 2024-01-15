@@ -15,10 +15,7 @@ files=(
     ".zsh/completion.zsh"
     ".zsh/input.zsh"
     ".zsh/environment.zsh"
-    ".zsh/pure/async"
-    ".zsh/pure/prompt_pure_setup"
     ".config/bat/config"
-    ".local/share/mc/skins/onedark16M.ini"
     ".config/mc/ini"
     ".config/mc/panels.ini"
 )
