@@ -26,7 +26,7 @@ vim.opt.number = true
 vim.opt.clipboard = 'unnamedplus'
 
 -- Neovim Cursor change after exiting Neovim bug fix
-vim.opt.guicursor = disable
+-- vim.opt.guicursor = disable
 
 -- delete instead of cut (use x for cut)
 -- vim.keymap.set({'n', 'v'}, 'd', '"_d')
