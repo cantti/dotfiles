@@ -46,6 +46,9 @@ fi
 #
 
 # colors
+# use
+# dircolors --print-database > ~/.dircolors
+# to generate original colors
 if [[ -x "$(command -v dircolors)" ]]; then
     test -r ~/.dir_colors && eval "$(dircolors -b ~/.dir_colors)" || eval "$(dircolors -b)"
 fi
