@@ -22,6 +22,7 @@ vim.opt.updatetime = 100
 
 -- line number
 vim.opt.number = true
+vim.opt.relativenumber = true
 
 -- clipboard config
 -- vim.opt.clipboard = 'unnamedplus'
