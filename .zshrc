@@ -74,11 +74,9 @@ alias egrep='egrep --color=auto'
 
 # ls
 alias ls="ls --group-directories-first --color=always --literal"
-alias ll="ls -lh"         # long format and human-readable sizes
-alias l="ll -A"           # long format, all files
-alias lm="l | less"    # long format, all files, use pager
-alias lk="ll -Sr"         # long format, largest file size last
-alias lt="ll -tr"         # long format, newest modification time last
+alias ll="ls -lh"
+alias lla="ll -A"
+alias llam="lla | less"
 
 # disable auto cd
 setopt noautocd
