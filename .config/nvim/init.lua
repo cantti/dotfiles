@@ -5,13 +5,14 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
+Plug 'tomasiser/vim-code-dark'
 vim.call('plug#end')
 
 -- enable true color 
 vim.opt.termguicolors = true
 
 -- set colorscheme
-vim.cmd 'colorscheme habamax'
+vim.cmd 'colorscheme codedark'
 
 -- reduce update time for immediate git status (airblade/vim-gitgutter)
 vim.opt.updatetime = 100
