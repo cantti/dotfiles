@@ -18,6 +18,7 @@ files=(
     ".config/bat/config"
     ".config/mc/ini"
     ".config/mc/panels.ini"
+    ".dir_colors"
 )
 
 # create dotfiles_old in homedir

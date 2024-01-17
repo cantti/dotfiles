@@ -45,6 +45,11 @@ fi
 # end WSL fixes
 #
 
+# colors
+if [[ -x "$(command -v dircolors)" ]]; then
+    test -r ~/.dir_colors && eval "$(dircolors -b ~/.dir_colors)" || eval "$(dircolors -b)"
+fi
+
 source "$HOME/.zsh/environment.zsh"
 source "$HOME/.zsh/completion.zsh"
 source "$HOME/.zsh/input.zsh"
@@ -59,12 +64,6 @@ export LESS="--RAW-CONTROL-CHARS -i"
 
 # default editor
 export EDITOR="nvim"
-
-# colors
-if [[ -x "$(command -v dircolors)" ]]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    LS_COLORS+=':ow=01;34'
-fi
 
 # grep
 alias grep="grep --color=auto"
@@ -90,7 +89,6 @@ export FZF_DEFAULT_OPTS="--exact"
 export FZF_DEFAULT_COMMAND="fd --type f --strip-cwd-prefix --hidden --follow --exclude .git --exclude node_modules"
 export FZF_CTRL_T_COMMAND="fd --type f --strip-cwd-prefix --hidden --follow --exclude .git"
 export FZF_ALT_C_COMMAND="fd --type d --strip-cwd-prefix --hidden --follow --exclude .git"
-
 
 # vim
 alias v="nvim"
@@ -118,6 +116,9 @@ fi
 
 # reboot to windows
 alias rebootw="systemctl reboot --boot-loader-entry=auto-windows"
+
+# list of colors
+alias colors='for i in {0..255}; do  printf "\x1b[38;5;${i}mcolor%-5i\x1b[0m" $i ; if ! (( ($i + 1 ) % 8 )); then echo ; fi ; done'
 
 # tmux copy tool
 if [[ -x "$(command -v clip.exe)" ]]; then
