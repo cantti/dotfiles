@@ -23,7 +23,9 @@ vim.opt.updatetime = 100
 vim.opt.number = true
 
 -- clipboard config
-vim.opt.clipboard = 'unnamedplus'
+-- vim.opt.clipboard = 'unnamedplus'
+vim.keymap.set({'n', 'v'}, '<leader>y', '"+y')
+vim.keymap.set({'n', 'v'}, '<leader>p', '"+p')
 
 -- Neovim Cursor change after exiting Neovim bug fix
 -- vim.opt.guicursor = disable
