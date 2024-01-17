@@ -11,7 +11,7 @@ vim.call('plug#end')
 vim.opt.termguicolors = true
 
 -- set colorscheme
-vim.cmd 'colorscheme slate'
+vim.cmd 'colorscheme habamax'
 
 -- reduce update time for immediate git status (airblade/vim-gitgutter)
 vim.opt.updatetime = 100
