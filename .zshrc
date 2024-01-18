@@ -162,6 +162,9 @@ if [[ -d "$HOME/.zsh/plugins/pure" ]]; then
   prompt pure
 fi
 
+# vim kb
+bindkey -v
+
 # zsh-syntax-highlighting (must be at the end)
 if [[ -f "$HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]; then
   source "$HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
