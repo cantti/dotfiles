@@ -54,8 +54,8 @@ vim.keymap.set({'n', 'v'}, '<leader>p', '"+p')
 -- vim.keymap.set({'n', 'v'}, 'C', '"_C')
 
 -- nav between buffers
-vim.keymap.set('n', '<leader>n', ':bnext<CR>')
-vim.keymap.set('n', '<leader>p', ':bprev<CR>')
+vim.keymap.set('n', 'gt', ':bnext<CR>')
+vim.keymap.set('n', 'gT', ':bprev<CR>')
 
 -- fzf
 vim.keymap.set('n', '<C-p>', ':Files<CR>')
@@ -79,9 +79,17 @@ vim.keymap.set('i', '<C-_>', '<Esc><Plug>NERDCommenterTogglei')
 vim.keymap.set('n', '<C-a>', 'ggVG') 
 
 -- display hidden characters
--- vim.opt.list = true
 -- use :set list or :set nolist
-vim.opt.listchars = { tab = ">·", trail = "·", precedes = "←", extends = "→", eol = "↲", nbsp = "␣" }
+vim.opt.list = true
+vim.opt.listchars = { 
+  tab = ">·",
+  trail = "·",
+  -- precedes = "←",
+  -- extends = "→",
+  -- eol = "↲",
+  nbsp = "␣",
+  space = "·"
+}
 
 -- indentation settings
 vim.opt.expandtab = true
