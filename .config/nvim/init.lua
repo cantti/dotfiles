@@ -18,7 +18,7 @@ vim.cmd 'colorscheme codedark'
 vim.opt.updatetime = 100
 
 -- leader space
-vim.g.mapleader = " "
+vim.g.mapleader = "<space>"
 
 -- line number
 vim.opt.number = true
