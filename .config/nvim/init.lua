@@ -97,8 +97,6 @@ vim.keymap.set('i', '<S-Tab>', '<C-d>')
 -- autopairs
 require("nvim-autopairs").setup {}
 
--- To the first non-blank character
+-- remap ^ and $
 vim.keymap.set({'n', 'v', 'o'}, 'H', '^')
-
--- To the end of the line
 vim.keymap.set({'n', 'v', 'o'}, 'L', '$')
