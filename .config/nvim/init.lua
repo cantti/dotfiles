@@ -6,6 +6,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
 Plug 'tomasiser/vim-code-dark'
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'windwp/nvim-autopairs'
 vim.call('plug#end')
 
 -- enable true color 
@@ -13,6 +15,19 @@ vim.opt.termguicolors = true
 
 -- set colorscheme
 vim.cmd 'colorscheme codedark'
+
+-- lualine
+require('lualine').setup {
+  options = {
+    theme = 'iceberg_dark',
+    section_separators = '',
+    component_separators = '',
+  },
+  tabline = {
+    lualine_a = {'buffers'},
+    lualine_z = {'tabs'}
+  }
+}
 
 -- reduce update time for immediate git status (airblade/vim-gitgutter)
 vim.opt.updatetime = 100
@@ -39,8 +54,8 @@ vim.keymap.set({'n', 'v'}, '<leader>p', '"+p')
 -- vim.keymap.set({'n', 'v'}, 'C', '"_C')
 
 -- nav between buffers
-vim.keymap.set('n', '<C-h>', ':bprev<CR>')
-vim.keymap.set('n', '<C-l>', ':bnext<CR>')
+vim.keymap.set('n', '<leader>n', ':bnext<CR>')
+vim.keymap.set('n', '<leader>p', ':bprev<CR>')
 
 -- fzf
 vim.keymap.set('n', '<C-p>', ':Files<CR>')
@@ -78,3 +93,6 @@ vim.keymap.set('n', '<leader>t2', ':set shiftwidth=2 tabstop=2<CR>')
 
 -- shift tab to de-indent
 vim.keymap.set('i', '<S-Tab>', '<C-d>')
+
+-- autopairs
+require("nvim-autopairs").setup {}
