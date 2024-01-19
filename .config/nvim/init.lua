@@ -96,3 +96,9 @@ vim.keymap.set('i', '<S-Tab>', '<C-d>')
 
 -- autopairs
 require("nvim-autopairs").setup {}
+
+-- To the first non-blank character
+vim.keymap.set('n', 'H', '^')
+
+-- To the end of the line
+vim.keymap.set('n', 'L', '$')
