@@ -8,6 +8,7 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'windwp/nvim-autopairs'
 Plug 'nvim-lua/plenary.nvim' -- required by telescope.nvim
 Plug 'nvim-telescope/telescope.nvim'
+Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' }) 
 vim.call('plug#end')
 
 -- enable true color 
@@ -51,7 +52,9 @@ vim.keymap.set('n', 'gT', ':bprev<CR>')
 -- telescope.nvim
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', ":Telescope find_files<CR>")
+vim.keymap.set('n', '<C-p>', ":Telescope find_files<CR>") -- vscode like
 vim.keymap.set('n', '<leader>fg', ":Telescope live_grep<CR>")
+vim.keymap.set('n', '<C-f>', ":Telescope live_grep<CR>") -- vscode lile
 vim.keymap.set('n', '<leader>fb', ":Telescope buffers<CR>")
 vim.keymap.set('n', '<leader>fh', ":Telescope help_tags<CR>")
 require('telescope').setup{
@@ -107,3 +110,12 @@ require("nvim-autopairs").setup {}
 -- remap ^ and $
 vim.keymap.set({'n', 'v', 'o'}, 'H', '^')
 vim.keymap.set({'n', 'v', 'o'}, 'L', '$')
+
+-- nvim-treesitter
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = { "lua", "vim", "vimdoc" },
+  highlight = {
+    enable = true
+  },
+}
+
