@@ -1,13 +1,13 @@
 local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
 Plug 'tomasiser/vim-code-dark'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'windwp/nvim-autopairs'
+Plug 'nvim-lua/plenary.nvim' -- required by telescope.nvim
+Plug 'nvim-telescope/telescope.nvim'
 vim.call('plug#end')
 
 -- enable true color 
@@ -44,26 +44,25 @@ vim.opt.relativenumber = true
 vim.keymap.set({'n', 'v'}, '<leader>y', '"+y')
 vim.keymap.set({'n', 'v'}, '<leader>p', '"+p')
 
--- Neovim Cursor change after exiting Neovim bug fix
--- vim.opt.guicursor = disable
-
--- delete instead of cut (use x for cut)
--- vim.keymap.set({'n', 'v'}, 'd', '"_d')
--- vim.keymap.set({'n', 'v'}, 'D', '"_D')
--- vim.keymap.set({'n', 'v'}, 'c', '"_c')
--- vim.keymap.set({'n', 'v'}, 'C', '"_C')
-
 -- nav between buffers
 vim.keymap.set('n', 'gt', ':bnext<CR>')
 vim.keymap.set('n', 'gT', ':bprev<CR>')
 
--- fzf
-vim.keymap.set('n', '<C-p>', ':Files<CR>')
-vim.keymap.set('n', '<leader>f', ':Files<CR>')
-vim.keymap.set('n', '<C-b>', ':Buffers<CR>')
-vim.keymap.set('n', '<leader>b', ':Buffers<CR>')
-vim.keymap.set('n', '<leader>h', ':History<CR>')
-vim.keymap.set('n', '<leader>r', ':History:<CR>')
+-- telescope.nvim
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', ":Telescope find_files<CR>")
+vim.keymap.set('n', '<leader>fg', ":Telescope live_grep<CR>")
+vim.keymap.set('n', '<leader>fb', ":Telescope buffers<CR>")
+vim.keymap.set('n', '<leader>fh', ":Telescope help_tags<CR>")
+require('telescope').setup{
+  pickers = {
+    find_files = {
+      find_command = {
+        "fd", "--type", "f", "--hidden", "--exclude", ".git", "--exclude", "node_modules"
+      }
+    }
+  },
+}
 
 -- Nerdcommenter settings
 vim.g.NERDCreateDefaultMappings = 1
