@@ -60,15 +60,16 @@ distro=$(get_distro)
 # use like paci fd fd-find
 function paci() {
   local pac="$1";
-  if [[ -z "$2" ]]; then 
-    ub="$1"
+  local ub="$2";
+  if [[ -z "$ub" ]]; then 
+    ub=$pac
   fi
   if [[ "$distro" == "ubuntu" ]]; then
     echo -e "${green}Installing $ub${nc}"
     apt install $ub
   elif [[ "$distro" == "arch" ]]; then
     echo -e "${green}Installing $pac${nc}"
-    sudo pacman -S --needed $pac
+    pacman -S --needed $pac
   fi  
   echo
 }
