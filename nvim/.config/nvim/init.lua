@@ -103,6 +103,10 @@ vim.keymap.set('n', '<leader>t2', ':set shiftwidth=2 tabstop=2<CR>')
 
 -- shift tab to de-indent
 vim.keymap.set('i', '<S-Tab>', '<C-d>')
+vim.keymap.set('v', '<Tab>', '>gv')
+vim.keymap.set('v', '<S-Tab>', '<gv')
+vim.keymap.set('n', '<Tab>', '>>')
+vim.keymap.set('n', '<S-Tab>', '<<')
 
 -- autopairs
 require("nvim-autopairs").setup {}
