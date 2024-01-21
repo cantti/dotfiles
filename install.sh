@@ -102,7 +102,7 @@ if [[ $deps -eq 1 ]]; then
 
   paci "fd" "fd-find"
 
-  if [[ "$distro" == "ubuntu" ]]; then
+  if [[ "$distro" == "ubuntu" && ! -f "~/.local/bin/fd" ]]; then
     mkdir -p ~/.local/bin
     ln -s $(which fdfind) ~/.local/bin/fd
   fi
