@@ -66,10 +66,10 @@ function paci() {
   fi
   if [[ "$distro" == "ubuntu" ]]; then
     echo -e "${green}Installing $ub${nc}"
-    apt install $ub
+    sudo apt install $ub
   elif [[ "$distro" == "arch" ]]; then
     echo -e "${green}Installing $pac${nc}"
-    pacman -S --needed $pac
+    sudo pacman -S --needed $pac
   fi  
   echo
 }
