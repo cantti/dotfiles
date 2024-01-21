@@ -102,9 +102,9 @@ if [[ $deps -eq 1 ]]; then
 
   paci "fd" "fd-find"
 
-  if [[ "$distro" == "ubuntu" && ! -f "~/.local/bin/fd" ]]; then
-    mkdir -p ~/.local/bin
-    ln -s $(which fdfind) ~/.local/bin/fd
+  if [[ "$distro" == "ubuntu" && ! -f "$HOME/.local/bin/fd" ]]; then
+    mkdir -p $HOME/.local/bin
+    ln -s $(which fdfind) "$HOME/.local/bin/fd"
   fi
 
   paci "ripgrep"
