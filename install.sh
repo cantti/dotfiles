@@ -1,7 +1,7 @@
 #!/bin/bash
 
-stow=0
-restow=0
+stow=1
+restow=1
 adopt=0
 deps=0
 no=0
