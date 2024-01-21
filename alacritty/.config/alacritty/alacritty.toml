@@ -1,0 +1,15 @@
+[window.dimensions]
+columns = 160
+lines = 50
+
+[cursor.style]
+# blinking = "Always"
+
+[cursor]
+blink_interval = 500
+
+[font.normal]
+family = "Hack"
+
+[env]
+TERM = "xterm-256color"

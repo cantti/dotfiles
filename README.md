@@ -12,9 +12,6 @@
 # fzf
 # https://github.com/junegunn/fzf
 # 
-# bat
-# https://github.com/sharkdp/bat
-# 
 # fd
 # https://github.com/sharkdp/fd
 

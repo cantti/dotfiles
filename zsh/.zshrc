@@ -87,7 +87,13 @@ setopt noautocd
 PATH="$PATH:$HOME/.local/bin"
 
 # fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+PATH="$PATH:$HOME/.fzf/bin"
+if [[ -f "$HOME/.fzf/shell/completion.zsh" ]]; then
+  source "$HOME/.fzf/shell/completion.zsh"
+fi
+if [[ -f "$HOME/.fzf/shell/key-bindings.zsh" ]]; then
+  source "$HOME/.fzf/shell/key-bindings.zsh"
+fi
 export FZF_DEFAULT_OPTS="--exact"
 export FZF_DEFAULT_COMMAND="fd --type f --strip-cwd-prefix --hidden --follow --exclude .git --exclude node_modules"
 export FZF_CTRL_T_COMMAND="fd --type f --strip-cwd-prefix --hidden --follow --exclude .git"
