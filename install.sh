@@ -7,12 +7,20 @@ deps=0
 no=0
 dir="*/"
 
-distro=""
-if [[ -n "$(uname -a | grep -i ubuntu)" ]]; then
-  distro="ubuntu"
-elif [[ -n "$(uname -a | grep -i arch)" ]]; then
-  distro="arch"
-fi
+# get distro
+function get_distro() {
+    if [[ -f /etc/os-release ]]
+    then
+        # On Linux systems
+        source /etc/os-release
+        echo $ID
+    else
+        # On systems other than Linux (e.g. Mac or FreeBSD)
+        uname
+    fi
+}
+
+distro=$(get_distro)
 
 # colors
 green="\033[0;32m"
@@ -23,7 +31,7 @@ nc="\033[0m"
 while test $# -gt 0; do
   case "$1" in
     -h|--help)
-      echo "--stow --restow --deps --adopt --dir"
+      echo "--deps --adopt --dir"
       exit 0
       ;;
     --stow)
@@ -59,10 +67,12 @@ done
 if [[ $stow -eq 1 ]]; then
   echo -e "${green}Run stow${nc}"
   stow --target=$HOME --verbose $([ $restow -eq 1 ] && echo "--restow") --no-folding $([ $adopt -eq 1 ] && echo "--adopt") $([ $no -eq 1 ] && echo "--no") $dir
+  echo
   if [[ $adopt -eq 1 ]]; then
     echo -e "${green}Run git restore .${nc}"
     git restore .
   fi
+  echo
 fi
 
 if [[ $deps -eq 1 ]]; then
