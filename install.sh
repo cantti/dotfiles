@@ -59,8 +59,8 @@ distro=$(get_distro)
 # install package
 # use like paci fd fd-find
 function paci() {
-  local pac="$1";
-  local ub="$2";
+  local pac="$1"
+  local ub=$([[ ! -z "$2" ]] && echo "$2" || echo "$1")
   if [[ -z "$ub" ]]; then 
     ub=$pac
   fi
@@ -110,6 +110,8 @@ if [[ $deps -eq 1 ]]; then
   paci "ripgrep"
 
   paci "mc"
+
+  paci "curl"
 
   # pure
   echo -e "${green}Installing pure${nc}"
