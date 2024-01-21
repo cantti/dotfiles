@@ -84,10 +84,14 @@ alias llam="lla | less"
 setopt noautocd
 
 # add ~/.local/bin to PATH
-PATH="$PATH:$HOME/.local/bin"
+if [[ ! ":$PATH:" == *":$HOME/.local/bin:"* ]]; then
+  PATH="$PATH:$HOME/.local/bin"
+fi
 
 # fzf
-PATH="$PATH:$HOME/.fzf/bin"
+if [[ ! ":$PATH:" == *":$HOME/.fzf/bin:"* ]]; then
+  PATH="$PATH:$HOME/.fzf/bin"
+fi
 if [[ -f "$HOME/.fzf/shell/completion.zsh" ]]; then
   source "$HOME/.fzf/shell/completion.zsh"
 fi
@@ -96,8 +100,14 @@ if [[ -f "$HOME/.fzf/shell/key-bindings.zsh" ]]; then
 fi
 export FZF_DEFAULT_OPTS="--exact"
 export FZF_DEFAULT_COMMAND="fd --type f --strip-cwd-prefix --hidden --follow --exclude .git --exclude node_modules"
-export FZF_CTRL_T_COMMAND="fd --type f --strip-cwd-prefix --hidden --follow --exclude .git"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type d --strip-cwd-prefix --hidden --follow --exclude .git"
+_fzf_compgen_path() { # vim **<tab>
+  fd --hidden --follow --exclude .git --exclude node_modules . "$1"
+}
+_fzf_compgen_dir() { # cd **<tab>
+  fd --type d --hidden --follow --exclude .git --exclude node_modules . "$1"
+}
 
 # vim
 alias v="nvim"
