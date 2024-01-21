@@ -1,45 +1,22 @@
 #!/bin/bash
 
-stow=1
-restow=1
+stow=0
 adopt=0
 deps=0
 no=0
 dir="*/"
 
-# get distro
-function get_distro() {
-    if [[ -f /etc/os-release ]]
-    then
-        # On Linux systems
-        source /etc/os-release
-        echo $ID
-    else
-        # On systems other than Linux (e.g. Mac or FreeBSD)
-        uname
-    fi
-}
-
-distro=$(get_distro)
-
-# colors
-green="\033[0;32m"
-red="\033[0;31m"
-orange="\033[0;33m"
-nc="\033[0m"
 
 while test $# -gt 0; do
   case "$1" in
     -h|--help)
-      echo "--deps --adopt --dir"
+      echo "--deps        install dependencies"
+      echo "--adopt       remove local files (files in git will be restored!)"
+      echo "--dir=tmux    apply stow only to current dir"
       exit 0
       ;;
     --stow)
       stow=1
-      shift
-      ;;
-    --restow)
-      restow=1
       shift
       ;;
     --dir*)
@@ -64,9 +41,48 @@ while test $# -gt 0; do
   esac
 done
 
+# get distro
+function get_distro() {
+  if [[ -f /etc/os-release ]]
+  then
+      # On Linux systems
+      source /etc/os-release
+      echo $ID
+  else
+      # On systems other than Linux (e.g. Mac or FreeBSD)
+      uname
+  fi
+}
+
+distro=$(get_distro)
+
+# install package
+# use like paci fd fd-find
+function paci() {
+  local pac="$1";
+  if [[ -z "$2" ]]; then 
+    ub="$1"
+  fi
+  if [[ "$distro" == "ubuntu" ]]; then
+    echo -e "${green}Installing $ub${nc}"
+    sudo apt install $ub
+  elif [[ "$distro" == "arch" ]]; then
+    echo -e "${green}Installing $pac${nc}"
+    sudo pacman -S --needed $pac
+  fi  
+  echo
+}
+
+# colors
+green="\033[0;32m"
+red="\033[0;31m"
+orange="\033[0;33m"
+nc="\033[0m"
+
+# stow
 if [[ $stow -eq 1 ]]; then
   echo -e "${green}Run stow${nc}"
-  stow --target=$HOME --verbose $([ $restow -eq 1 ] && echo "--restow") --no-folding $([ $adopt -eq 1 ] && echo "--adopt") $([ $no -eq 1 ] && echo "--no") $dir
+  stow --target=$HOME --verbose --restow --no-folding $([ $adopt -eq 1 ] && echo "--adopt") $([ $no -eq 1 ] && echo "--no") $dir
   echo
   if [[ $adopt -eq 1 ]]; then
     echo -e "${green}Run git restore .${nc}"
@@ -75,8 +91,24 @@ if [[ $stow -eq 1 ]]; then
   echo
 fi
 
+# deps
 if [[ $deps -eq 1 ]]; then
   echo -e "${green}Distro=${nc}$distro\n"
+
+  paci "zsh"
+
+  paci "stow"
+
+  paci "fd" "fd-find"
+
+  if [[ "$distro" == "ubuntu" ]]; then
+    mkdir -p ~/.local/bin
+    ln -s $(which fdfind) ~/.local/bin/fd
+  fi
+
+  paci "ripgrep"
+
+  paci "mc"
 
   # pure
   echo -e "${green}Installing pure${nc}"
@@ -93,32 +125,4 @@ if [[ $deps -eq 1 ]]; then
   git -C "$HOME/.fzf" pull || git clone --depth 1 https://github.com/junegunn/fzf.git "$HOME/.fzf"
   $HOME/.fzf/install --bin
   echo
-  
-  # install fd
-  echo -e "${green}Installing fd${nc}"
-  if [[ "$distro" == "ubuntu" ]]; then
-    sudo apt install fd-find
-    mkdir -p ~/.local/bin
-    ln -s $(which fdfind) ~/.local/bin/fd
-  elif [[ "$distro" == "arch" ]]; then
-    sudo pacman -S --needed fd
-  fi  
-  echo
-
-# install ripgrep
-  echo -e "${green}Installing ripgrep${nc}"
-  if [[ "$distro" == "ubuntu" ]]; then
-    sudo apt install ripgrep
-  elif [[ "$distro" == "arch" ]]; then
-    sudo pacman -S --needed ripgrep
-  fi
-  echo
-
-  # install mc
-  echo -e "${green}Installing mc${nc}"
-  if [[ "$distro" == "ubuntu" ]]; then
-    sudo apt install mc
-  elif [[ "$distro" == "arch" ]]; then
-    sudo pacman -S --needed mc
-  fi  
 fi
