@@ -86,7 +86,7 @@ if [[ $stow -eq 1 ]]; then
   stow --target=$HOME --verbose --restow --no-folding $([ $adopt -eq 1 ] && echo "--adopt") $([ $no -eq 1 ] && echo "--no") $dir
   echo
   if [[ $adopt -eq 1 ]]; then
-    echo -e "${green}Run git restore .${nc}"
+    echo -e "${green}Running git restore .${nc}"
     git restore .
   fi
   echo
@@ -103,6 +103,7 @@ if [[ $deps -eq 1 ]]; then
   paci "fd" "fd-find"
 
   if [[ "$distro" == "ubuntu" && ! -f "$HOME/.local/bin/fd" ]]; then
+    echo -e "${green}Creating symlink for fd in ${nc}$HOME/.local/bin/fd"
     mkdir -p $HOME/.local/bin
     ln -s $(which fdfind) "$HOME/.local/bin/fd"
   fi
