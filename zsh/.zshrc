@@ -171,6 +171,10 @@ fi
 alias g="git"
 alias lg="lazygit"
 
+# docker aliases
+alias docker='sudo docker'
+alias docker-compose='sudo docker compose'
+
 # pure
 if [[ -d "$HOME/.zsh/plugins/pure" ]]; then
   fpath+=($HOME/.zsh/plugins/pure)
