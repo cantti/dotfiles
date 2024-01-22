@@ -1,8 +1,8 @@
 let mapleader=" "
 
 " clipboard
-nnoremap <leader>y "+y
-nnoremap <leader>p "+p
+noremap <leader>y "+y
+noremap <leader>p "+p
 
 " nav between buffers
 nnoremap gt :bnext<CR>
@@ -19,9 +19,5 @@ nnoremap <Tab> >>
 nnoremap <S-Tab <<
 
 " Ctrl + A to select all
-nnoremap H ^
-vnoremap H ^
-onoremap H ^
-nnoremap L $
-vnoremap L $
-onoremap L $
+noremap H ^
+noremap L $
