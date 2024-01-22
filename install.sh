@@ -83,7 +83,7 @@ nc="\033[0m"
 # stow
 if [[ $stow -eq 1 ]]; then
   echo -e "${green}Run stow${nc}"
-  stow --target=$HOME --verbose --restow --no-folding $([ $adopt -eq 1 ] && echo "--adopt") $([ $no -eq 1 ] && echo "--no") $dir
+  stow --target=$HOME $([ $adopt -eq 1 ] && echo "--adopt" || echo "--restow") $([ $no -eq 1 ] && echo "--no") --verbose --no-folding $dir
   echo
   if [[ $adopt -eq 1 ]]; then
     echo -e "${green}Running git restore .${nc}"
