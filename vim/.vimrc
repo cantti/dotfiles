@@ -3,6 +3,7 @@ let mapleader=" "
 " clipboard
 noremap <leader>y "+y
 noremap <leader>p "+p
+noremap <leader>P "+P
 
 " nav between buffers
 " VsVim and VSCodeVim work with tabs, not buffers
