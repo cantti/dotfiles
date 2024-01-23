@@ -55,7 +55,10 @@ fi
 
 source "$HOME/.zsh/environment.zsh"
 source "$HOME/.zsh/completion.zsh"
-source "$HOME/.zsh/input.zsh"
+
+# key bindings
+# source "$HOME/.zsh/input.zsh"
+bindkey -v
 
 # history settings
 export HISTSIZE=1000000000
