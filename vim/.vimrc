@@ -5,8 +5,10 @@ noremap <leader>y "+y
 noremap <leader>p "+p
 
 " nav between buffers
-nnoremap gt :bnext<CR>
-nnoremap gT :bprev<CR>
+" VsVim and VSCodeVim work with tabs, not buffers
+" uncomment for regular vim to switch buffers with gt
+" nnoremap gt :bnext<CR>
+" nnoremap gT :bprev<CR>
 
 " Ctrl + A to select all
 noremap <C-a> ggVG
