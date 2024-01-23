@@ -81,7 +81,8 @@ vim.keymap.set('i', '<C-_>', '<Esc><Plug>NERDCommenterTogglei')
 vim.keymap.set('n', '<C-a>', 'ggVG') 
 
 -- Ctrl + S to save
-vim.keymap.set({ 'n', 'i' }, '<C-s>', ':w<CR>') 
+vim.keymap.set('n', '<C-s>', ':w<CR>') 
+vim.keymap.set('i', '<C-s>', '<Esc>:w<CR>') 
 
 -- Ctrl + q to exit
 vim.keymap.set({ 'n', 'i' }, '<C-q>', ':q<CR>') 
