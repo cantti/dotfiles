@@ -80,6 +80,12 @@ vim.keymap.set('i', '<C-_>', '<Esc><Plug>NERDCommenterTogglei')
 -- Ctrl + A to select all
 vim.keymap.set('n', '<C-a>', 'ggVG') 
 
+-- Ctrl + S to save
+vim.keymap.set({ 'n', 'i' }, '<C-s>', ':w<CR>') 
+
+-- Ctrl + q to exit
+vim.keymap.set({ 'n', 'i' }, '<C-q>', ':q<CR>') 
+
 -- display hidden characters
 -- use :set list or :set nolist
 vim.opt.list = true

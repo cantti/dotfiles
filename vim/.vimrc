@@ -21,3 +21,11 @@ nnoremap <S-Tab <<
 " Ctrl + A to select all
 noremap H ^
 noremap L $
+
+" Ctrl + S to save
+inoremap <C-s> :w<CR>
+nnoremap <C-s> :w<CR>
+
+" Ctrl + q to exit
+inoremap <C-q> :q<CR>
+nnoremap <C-q> :q<CR>
