@@ -1,11 +1,10 @@
 let mapleader=" "
 
 " clipboard
-noremap <leader>p "0p
-noremap <leader>P "0P
-noremap <leader>pp "+p
-noremap <leader>PP "+P
-noremap <leader>yy "+y
+noremap <leader>0 "0
+noremap <leader>p "+
+inoremap <leader>0 "0
+inoremap <leader>p "+
 
 " nav between buffers
 " VsVim and VSCodeVim work with tabs, not buffers
