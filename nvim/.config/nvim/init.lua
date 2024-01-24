@@ -10,7 +10,7 @@ Plug 'nvim-lua/plenary.nvim' -- required by telescope.nvim
 Plug 'nvim-telescope/telescope.nvim'
 Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' }) 
 vim.call('plug#end')
-System System System 
+
 -- enable true color 
 vim.opt.termguicolors = true
 --
