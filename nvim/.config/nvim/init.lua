@@ -10,10 +10,10 @@ Plug 'nvim-lua/plenary.nvim' -- required by telescope.nvim
 Plug 'nvim-telescope/telescope.nvim'
 Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' }) 
 vim.call('plug#end')
-
+System System System 
 -- enable true color 
 vim.opt.termguicolors = true
-
+--
 -- set colorscheme
 vim.cmd 'colorscheme codedark'
 
@@ -41,12 +41,9 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 -- clipboard config
--- vim.opt.clipboard = 'unnamedplus'
-vim.keymap.set({'n', 'v'}, '<leader>p', '"0p')
-vim.keymap.set({'n', 'v'}, '<leader>P', '"0P')
-vim.keymap.set({'n', 'v'}, '<leader>pp', '"+p')
-vim.keymap.set({'n', 'v'}, '<leader>PP', '"+P')
-vim.keymap.set({'n', 'v'}, '<leader>yy', '"+y')
+-- vim.opt.clipboard = 'unnamedplus''
+vim.keymap.set({'n', 'v'}, '<leader>0', '"0')
+vim.keymap.set({'n', 'v'}, '<leader>p', '"+')
 
 -- nav between buffers
 vim.keymap.set('n', 'gt', ':bnext<CR>')
@@ -132,4 +129,3 @@ require'nvim-treesitter.configs'.setup {
     enable = true
   },
 }
-
