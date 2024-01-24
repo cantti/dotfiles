@@ -44,9 +44,9 @@ vim.opt.relativenumber = true
 -- vim.opt.clipboard = 'unnamedplus'
 vim.keymap.set({'n', 'v'}, '<leader>p', '"0p')
 vim.keymap.set({'n', 'v'}, '<leader>P', '"0P')
-vim.keymap.set({'n', 'v'}, ',y', '"+y')
-vim.keymap.set({'n', 'v'}, ',p', '"+p')
-vim.keymap.set({'n', 'v'}, ',P', '"+P')
+vim.keymap.set({'n', 'v'}, '<leader>pp', '"+p')
+vim.keymap.set({'n', 'v'}, '<leader>PP', '"+P')
+vim.keymap.set({'n', 'v'}, '<leader>yy', '"+y')
 
 -- nav between buffers
 vim.keymap.set('n', 'gt', ':bnext<CR>')
