@@ -6,7 +6,6 @@ nnoremap <leader>c "+
 vnoremap <leader>c "+
 nnoremap <leader>0 "0
 vnoremap <leader>0 "0
-vnoremap p P
 
 " nav between buffers
 " VsVim and VSCodeVim work with tabs, not buffers
