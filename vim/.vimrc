@@ -1,7 +1,7 @@
 let mapleader=" "
 
 " clipboard
-set clipboard=unnamedplus
+set clipboard=unnamed,unnamedplus
 nnoremap x "_x
 nnoremap X "_X
 nnoremap c "_c
