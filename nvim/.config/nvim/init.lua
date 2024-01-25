@@ -42,14 +42,9 @@ vim.opt.relativenumber = true
 
 -- clipboard config
 vim.opt.clipboard = 'unnamedplus'
--- vim.keymap.set({'n', 'v'}, '<leader>p', '"+p')
--- vim.keymap.set({'n', 'v'}, '<leader>y', '"+y')
-vim.keymap.set({'n', 'v'}, 'x', '"_x')
-vim.keymap.set({'n', 'v'}, 'X', '"_X')
-vim.keymap.set({'n', 'v'}, 'c', '"_c')
-vim.keymap.set({'n', 'v'}, 'C', '"_C')
-vim.keymap.set({'n', 'v'}, 'd', '"_d')
-vim.keymap.set({'n', 'v'}, 'D', '"_D')
+vim.keymap.set({'n', 'v'}, '<leader>p', '"+p')
+vim.keymap.set({'n', 'v'}, '<leader>y', '"+y')
+vim.keymap.set({'n', 'v'}, '<leader>0', '"0p')
 vim.keymap.set('v', 'p', 'P')
 
 -- nav between buffers
