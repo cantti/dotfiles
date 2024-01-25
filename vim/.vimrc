@@ -2,16 +2,10 @@ let mapleader=" "
 
 " clipboard
 set clipboard=unnamed,unnamedplus
-nnoremap x "_x
-nnoremap X "_X
-nnoremap c "_c
-nnoremap C "_C
-nnoremap d "_d
-vnoremap x "_x
-vnoremap X "_X
-vnoremap c "_c
-vnoremap C "_C
-vnoremap d "_d
+nnoremap p "+p
+inoremap p "+p
+nnoremap y "+y
+inoremap y "+y
 vnoremap p P
 
 " nav between buffers
