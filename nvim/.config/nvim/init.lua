@@ -68,7 +68,7 @@ require('telescope').setup{
 }
 
 -- Nerdcommenter settings
-vim.g.NERDCreateDefaultMappings = 1
+vim.g.NERDCreateDefaultMappings = 0
 vim.g.NERDSpaceDelims = 1
 vim.g.NERDDefaultAlign = 'left'
 vim.g.NERDToggleCheckAllLines = 1
