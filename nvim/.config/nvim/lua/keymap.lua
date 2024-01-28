@@ -38,3 +38,6 @@ vim.keymap.set('n', '<S-Tab>', '<<')
 -- remap ^ and $
 vim.keymap.set({'n', 'v', 'o'}, 'H', '^')
 vim.keymap.set({'n', 'v', 'o'}, 'L', '$')
+
+-- netrw
+vim.keymap.set('n', '<leader>e', ':Ex<cr>')

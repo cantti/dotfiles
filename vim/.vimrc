@@ -1,7 +1,7 @@
 let mapleader=" "
 
 " clipboard
-" set clipboard=unnamed,unnamedplus
+set clipboard=unnamed,unnamedplus
 nnoremap \ "_
 vnoremap \ "_
 vnoremap p P
