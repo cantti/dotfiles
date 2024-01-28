@@ -60,6 +60,10 @@ source "$HOME/.zsh/completion.zsh"
 # source "$HOME/.zsh/input.zsh"
 bindkey -v
 
+# backspace fix
+# https://github.com/spaceship-prompt/spaceship-prompt/issues/91
+bindkey "^?" backward-delete-char
+
 # history settings
 export HISTSIZE=1000000000
 export SAVEHIST=1000000000

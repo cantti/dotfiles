@@ -85,11 +85,6 @@ if [[ $stow -eq 1 ]]; then
   echo -e "${green}Run stow${nc}"
   stow --target=$HOME $([ $adopt -eq 1 ] && echo "--adopt" || echo "--restow") $([ $no -eq 1 ] && echo "--no") --verbose --no-folding $dir
   echo
-  if [[ $adopt -eq 1 ]]; then
-    echo -e "${green}Running git restore .${nc}"
-    git restore .
-  fi
-  echo
 fi
 
 # deps
