@@ -40,8 +40,8 @@ return {
   opts = {
     formatters_by_ft = {
       lua = { "stylua" },
-      -- Use a sub-list to run only the first available formatter
       javascript = { "prettier" },
+      typescript = { "prettier" },
     },
     format_on_save = function(bufnr)
       -- Disable with a global or buffer-local variable
