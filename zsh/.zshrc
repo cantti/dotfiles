@@ -182,6 +182,11 @@ alias lg="lazygit"
 alias docker='sudo docker'
 alias docker-compose='sudo docker compose'
 
+# Add .NET Core SDK tools
+if [[ ! ":$PATH:" == *"$PATH:$HOME/.dotnet/tools"* ]]; then
+  PATH="$PATH:$HOME/.dotnet/tools"
+fi
+
 # pure
 if [[ -d "$HOME/.zsh/plugins/pure" ]]; then
   fpath+=($HOME/.zsh/plugins/pure)

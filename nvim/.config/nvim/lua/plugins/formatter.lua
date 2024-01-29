@@ -42,6 +42,7 @@ return {
       lua = { "stylua" },
       javascript = { "prettier" },
       typescript = { "prettier" },
+      cs = { "csharpier" },
     },
     format_on_save = function(bufnr)
       -- Disable with a global or buffer-local variable
