@@ -1,3 +1,7 @@
+" relative line numbers
+set number
+set relativenumber
+
 let mapleader=" "
 
 " clipboard
