@@ -47,7 +47,7 @@ fi
 
 # colors
 # use
-# dircolors --print-database > ~/.dircolors
+# dircolors --print-database > ~/.dir_colors
 # to generate original colors
 if [[ -x "$(command -v dircolors)" ]]; then
     test -r ~/.dir_colors && eval "$(dircolors -b ~/.dir_colors)" || eval "$(dircolors -b)"
@@ -83,6 +83,7 @@ alias egrep='egrep --color=auto'
 
 # ls
 alias ls="ls --group-directories-first --color=always --literal"
+alias lsa="ls -A"
 alias ll="ls -lh"
 alias lla="ll -A"
 alias llam="lla | less"
