@@ -57,8 +57,8 @@ source "$HOME/.zsh/environment.zsh"
 source "$HOME/.zsh/completion.zsh"
 
 # key bindings
-# source "$HOME/.zsh/input.zsh"
 bindkey -v
+source "$HOME/.zsh/input.zsh"
 
 # backspace fix
 # https://github.com/spaceship-prompt/spaceship-prompt/issues/91
