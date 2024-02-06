@@ -1,18 +1,18 @@
--- enable true color 
+-- enable true color
 vim.opt.termguicolors = true
 
 -- line number
 vim.opt.number = true
-vim.opt.relativenumber = true
+-- vim.opt.relativenumber = true
 
 -- reduce update time for immediate git status (airblade/vim-gitgutter)
 vim.opt.updatetime = 100
 
 -- set colorscheme
-vim.cmd 'colorscheme codedark'
+vim.cmd("colorscheme codedark")
 
 -- Clipboard
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.clipboard = "unnamedplus"
 
 -- indentation settings
 vim.opt.expandtab = true
@@ -22,13 +22,13 @@ vim.opt.shiftwidth = 2
 
 -- display hidden characters
 -- use :set list or :set nolist
-vim.opt.list = true
-vim.opt.listchars = { 
+-- vim.opt.list = true
+vim.opt.listchars = {
   tab = ">·",
   trail = "·",
   -- precedes = "←",
   -- extends = "→",
   -- eol = "↲",
   nbsp = "␣",
-  space = "·"
+  space = "·",
 }

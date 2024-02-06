@@ -1,6 +1,6 @@
-" relative line numbers
+" line numbers
 set number
-set relativenumber
+" set relativenumber
 
 let mapleader=" "
 
