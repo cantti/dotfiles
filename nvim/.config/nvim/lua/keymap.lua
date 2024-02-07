@@ -1,13 +1,15 @@
--- leader space
-vim.g.mapleader = " "
-
 -- telescope.nvim
-vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>")
-vim.keymap.set("n", "<C-p>", ":Telescope find_files<CR>") -- vscode like
-vim.keymap.set("n", "<leader>fg", ":Telescope live_grep<CR>")
-vim.keymap.set("n", "<C-f>", ":Telescope live_grep<CR>") -- vscode lile
-vim.keymap.set("n", "<leader>fb", ":Telescope buffers<CR>")
-vim.keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>")
+local builtin = require("telescope.builtin")
+vim.keymap.set("n", "<leader>ff", builtin.find_files)
+vim.keymap.set("n", "<leader>fg", builtin.live_grep)
+vim.keymap.set("n", "<leader>fb", builtin.buffers)
+vim.keymap.set("n", "<leader>fh", builtin.help_tags)
+vim.keymap.set("n", "<leader>fr", builtin.lsp_references)
+vim.keymap.set("n", "<leader>fe", builtin.diagnostics)
+vim.keymap.set("n", "<leader>fd", builtin.lsp_definitions)
+vim.keymap.set("n", "<leader>fi", builtin.lsp_implementations)
+vim.keymap.set("n", "<C-p>", builtin.find_files) -- vscode like
+vim.keymap.set("n", "<C-f>", builtin.live_grep) -- vscode lile
 
 -- clipboard
 vim.keymap.set({ "n", "v" }, "\\", '"_')
@@ -46,44 +48,10 @@ vim.keymap.set("n", "<leader>e", ":Ex<cr>")
 vim.keymap.set("n", "<leader>fm", ":Format<cr>")
 
 -- lsp
-vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist)
-vim.keymap.set("n", "gD", vim.lsp.buf.declaration)
-vim.keymap.set("n", "gd", vim.lsp.buf.definition)
-vim.keymap.set("n", "K", vim.lsp.buf.hover)
-vim.keymap.set("n", "gi", vim.lsp.buf.implementation)
-vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help)
 vim.keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder)
 vim.keymap.set("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder)
 vim.keymap.set("n", "<leader>wl", function()
   print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 end)
-vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition)
-vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
 vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action)
-vim.keymap.set("n", "gr", vim.lsp.buf.references)
-vim.keymap.set("n", "<leader>f", function()
-  vim.lsp.buf.format({ async = true })
-end)
-
--- trouble
-vim.keymap.set("n", "<leader>xx", function()
-  require("trouble").toggle()
-end)
-vim.keymap.set("n", "<leader>xw", function()
-  require("trouble").toggle("workspace_diagnostics")
-end)
-vim.keymap.set("n", "<leader>xd", function()
-  require("trouble").toggle("document_diagnostics")
-end)
-vim.keymap.set("n", "<leader>xq", function()
-  require("trouble").toggle("quickfix")
-end)
-vim.keymap.set("n", "<leader>xl", function()
-  require("trouble").toggle("loclist")
-end)
-vim.keymap.set("n", "gr", function()
-  require("trouble").toggle("lsp_references")
-end)
+vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename)

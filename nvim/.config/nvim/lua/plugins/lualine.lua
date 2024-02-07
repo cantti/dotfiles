@@ -1,16 +1,16 @@
 return {
-  { 
+  {
     "nvim-lualine/lualine.nvim",
     opts = {
       options = {
-        theme = 'iceberg_dark',
-        section_separators = '',
-        component_separators = '',
+        theme = "nord",
+        section_separators = "",
+        component_separators = "",
       },
       tabline = {
-        lualine_a = {'buffers'},
-        lualine_z = {'tabs'}
-      }
-    }
-  }
+        lualine_c = { { "filename", path = 3, file_status = true } },
+        lualine_z = { "tabs" },
+      },
+    },
+  },
 }

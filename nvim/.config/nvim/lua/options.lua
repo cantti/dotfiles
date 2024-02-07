@@ -22,13 +22,13 @@ vim.opt.shiftwidth = 2
 
 -- display hidden characters
 -- use :set list or :set nolist
--- vim.opt.list = true
+vim.opt.list = true
 vim.opt.listchars = {
-  tab = ">·",
+  -- tab = ">·",
   trail = "·",
   -- precedes = "←",
   -- extends = "→",
   -- eol = "↲",
-  nbsp = "␣",
-  space = "·",
+  -- nbsp = "␣",
+  -- space = "·",
 }
