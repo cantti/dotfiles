@@ -24,10 +24,10 @@ vim.opt.shiftwidth = 2
 -- use :set list or :set nolist
 vim.opt.list = true
 vim.opt.listchars = {
-  -- tab = ">·",
+  tab = "» ",
   trail = "·",
-  -- precedes = "←",
-  -- extends = "→",
+  precedes = "←",
+  extends = "→",
   -- eol = "↲",
   -- nbsp = "␣",
   -- space = "·",
