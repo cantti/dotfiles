@@ -24,7 +24,7 @@ inoremap <S-Tab> <C-d>
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 nnoremap <Tab> >>
-nnoremap <S-Tab <<
+nnoremap <S-Tab> <<
 
 " Ctrl + A to select all
 noremap H ^
