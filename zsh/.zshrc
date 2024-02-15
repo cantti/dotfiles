@@ -135,11 +135,13 @@ alias m='mc'
 alias atool="atool -q"
 
 # open in file explorer
-if [[ -x "$(command -v explorer.exe)" ]]; then
-  alias e="explorer.exe ."
-else
-  alias e="dolphin . >/dev/null 2>&1 & disown"
-fi
+function e {
+  if [[ -x "$(command -v explorer.exe)" ]]; then
+    explorer.exe "$@"
+  else
+    dolphin "$@" >/dev/null 2>&1 & disown
+  fi
+}
 
 # reboot to windows
 alias rebootw="systemctl reboot --boot-loader-entry=auto-windows"
