@@ -42,6 +42,8 @@ return {
       lua = { "stylua" },
       javascript = { "prettier" },
       typescript = { "prettier" },
+      typescriptreact = { "prettier" },
+      javascriptreact = { "prettier" },
       cs = { "csharpier" },
     },
     format_on_save = function(bufnr)
