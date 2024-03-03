@@ -1,15 +1,12 @@
 -- telescope.nvim
-local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader>ff", builtin.find_files)
-vim.keymap.set("n", "<leader>fg", builtin.live_grep)
-vim.keymap.set("n", "<leader>fb", builtin.buffers)
-vim.keymap.set("n", "<leader>fh", builtin.help_tags)
-vim.keymap.set("n", "<leader>fr", builtin.lsp_references)
-vim.keymap.set("n", "<leader>fe", builtin.diagnostics)
-vim.keymap.set("n", "<leader>fd", builtin.lsp_definitions)
-vim.keymap.set("n", "<leader>fi", builtin.lsp_implementations)
-vim.keymap.set("n", "<C-p>", builtin.find_files) -- vscode like
-vim.keymap.set("n", "<C-f>", builtin.live_grep) -- vscode lile
+local telescope = require("telescope.builtin")
+vim.keymap.set("n", "<leader>ff", telescope.find_files)
+vim.keymap.set("n", "<leader>fg", telescope.live_grep)
+vim.keymap.set("n", "<leader>fb", telescope.buffers)
+vim.keymap.set("n", "<leader>fh", telescope.help_tags)
+vim.keymap.set("n", "<leader>fd", telescope.diagnostics)
+vim.keymap.set("n", "<C-p>", telescope.find_files) -- vscode like
+vim.keymap.set("n", "<C-f>", telescope.live_grep) -- vscode lile
 
 -- clipboard
 vim.keymap.set({ "n", "v" }, "\\", '"_')
@@ -56,3 +53,6 @@ end)
 vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action)
 vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename)
 vim.keymap.set("n", "K", vim.lsp.buf.hover)
+vim.keymap.set("n", "gd", telescope.lsp_definitions)
+vim.keymap.set("n", "gr", telescope.lsp_references)
+vim.keymap.set("n", "gi", telescope.lsp_implementations)
