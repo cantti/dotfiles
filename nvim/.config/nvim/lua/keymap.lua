@@ -16,9 +16,9 @@ vim.keymap.set("v", "p", "P")
 vim.keymap.set("n", "gt", ":bnext<CR>")
 vim.keymap.set("n", "gT", ":bprev<CR>")
 
--- Ctrl+/ to comment
-vim.keymap.set({ "n", "v" }, "<C-_>", "<Plug>NERDCommenterToggle")
-vim.keymap.set("i", "<C-_>", "<Esc><Plug>NERDCommenterTogglei")
+-- comment
+vim.keymap.set({ "n", "v" }, "<leader>cc", "<plug>NERDCommenterComment")
+vim.keymap.set({ "n", "v" }, "<leader>cu", "<plug>NERDCommenterUncomment")
 
 -- Ctrl + A to select all
 vim.keymap.set("n", "<C-a>", "ggVG")

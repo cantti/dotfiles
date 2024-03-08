@@ -1,3 +1,6 @@
+[window]
+startup_mode = "Maximized"
+
 [window.dimensions]
 columns = 160
 lines = 50
