@@ -1,0 +1,34 @@
+let mapleader=" "
+
+set clipboard=unnamed,unnamedplus
+nnoremap \ "_
+vnoremap \ "_
+vnoremap p P
+
+noremap <C-a> ggVG
+
+" Tab and S-Tab
+inoremap <S-Tab> <C-d>
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
+nnoremap <Tab> >>
+nnoremap <S-Tab> <<
+
+noremap H ^
+noremap L $
+
+nnoremap <leader>cc :vsc Edit.CommentSelection<cr>
+vnoremap <leader>cc :vsc Edit.CommentSelection<cr>
+
+nnoremap <leader>cu :vsc Edit.UncommentSelection<cr>
+vnoremap <leader>cu :vsc Edit.UncommentSelection<cr>
+
+nnoremap <leader>ff :vsc Edit.GoToFile<CR>
+nnoremap gr :vsc Edit.FindAllReferences<CR>
+nnoremap gd :vsc Edit.GoToDefinition<CR>
+nnoremap gi :vsc Edit.GoToImplementation<CR>
+
+nnoremap <C-o> :vsc View.NavigateBackward<CR>
+nnoremap <C-i> :vsc View.NavigateForward<CR>
+
+nnoremap <Leader>rn :vsc Refactor.Rename<CR>
