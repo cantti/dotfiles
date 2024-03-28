@@ -3,4 +3,5 @@ return {
   { "RRethy/vim-illuminate" },
   { "nvim-tree/nvim-web-devicons" },
   { "tpope/vim-sleuth" },
+  { "junegunn/vim-easy-align" }
 }
